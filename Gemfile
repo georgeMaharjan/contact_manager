@@ -31,6 +31,12 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# for pagination
+gem "kaminari", "~> 1.2", ">= 1.2.2"
+
+# for search
+gem "pg_search", "~> 2.3", ">= 2.3.7"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -47,6 +53,10 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "annotate"
+
+  gem "rubocop-rails"
+
   gem "web-console"
 end
 
