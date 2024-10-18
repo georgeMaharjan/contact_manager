@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-between mb-3">
+  <h1>Contacts</h1>
+  <div>
+    <%= link_to 'New Contact', new_contact_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<%= form_with(url: contacts_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "replace", controller: "search", action: "input->search#submit" }) do %>
+  <div class="input-group mb-3">
+    <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: "Search by name, phone, or email", id: "search-input" %>
+  </div>
+<% end %>
+
+<%= turbo_frame_tag "search-results" do %>
+  <% if @contacts.present? %>
+    <%= render partial: 'table', locals: { contacts: @contacts } %>
+  <% else %>
+    <div class="d-flex justify-content-center">
+      <%= image_tag('nodata.jpeg') %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="d-flex justify-content-center mt-3">
+  <%= paginate @contacts, theme: 'bootstrap-5', remote:true %>
+</div>
