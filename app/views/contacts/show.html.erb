@@ -1,0 +1,14 @@
+<div class="card" style="width: 40rem;">
+  <div class="card-header">
+    <h2><%= @contact.first_name %> <%= @contact.middle_name %> <%= @contact.last_name %></h2>
+  </div>
+  <div class="card-body">
+    <p><strong>Email:</strong> <%= @contact.email %></p>
+    <p><strong>Phone:</strong> <%= @contact.phone %></p>
+    <p><strong>Address:</strong> <%= @contact.address %></p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Edit', edit_contact_path(@contact), class: 'btn btn-warning' %>
+    <%= link_to 'Back', contacts_path, class: 'btn btn-outline-secondary' %>
+  </div>
+</div>
