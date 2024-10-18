@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+.flash-message {
+  display: flex;
+  justify-content: flex-end;
+
+  .message{
+    width: 30%;
+  }
+}
+
+.table {
+  --bs-table-hover-bg: #b3ccef59;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: #b3ccef59;
+}
