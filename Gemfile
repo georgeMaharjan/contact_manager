@@ -37,6 +37,14 @@ gem "kaminari", "~> 1.2", ">= 1.2.2"
 # for search
 gem "pg_search", "~> 2.3", ">= 2.3.7"
 
+gem "bootstrap"
+
+gem "sassc-rails"
+
+gem "jquery-rails", "~> 4.6"
+
+gem "faker"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
